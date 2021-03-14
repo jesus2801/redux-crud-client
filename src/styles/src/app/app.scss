@@ -1,0 +1,138 @@
+@import '../global/config';
+@import './header';
+
+.main {
+  width: 90%;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  //products title
+  h2 {
+    font-weight: 200;
+    font-size: 34px;
+    color: $blackColor;
+    text-transform: uppercase;
+  }
+
+  //products table
+  table {
+    border-collapse: collapse;
+    margin-top: 40px;
+    width: 100%;
+    thead {
+      background-color: $mainColor;
+      th {
+        padding: 30px 10px;
+        color: #fff;
+        font-weight: 400;
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 20px;
+          text-align: center;
+          color: $blackColor;
+        }
+
+        td:nth-child(1)::first-letter {
+          text-transform: uppercase;
+        }
+
+        td:nth-child(3) {
+          .edit {
+            background-color: $mainColor;
+          }
+          .delete {
+            background-color: $blackColor;
+          }
+          .button {
+            border: none;
+            outline: none;
+            text-decoration: none;
+            border-radius: 2px;
+            padding: 4px 10px;
+            margin: 0 10px;
+            font-size: 15px;
+            color: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+
+      tr:nth-child(2n + 1) {
+        background-color: rgb(233, 233, 233);
+      }
+    }
+  }
+
+  //formulario de productos
+  .form-product {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-box-shadow: 1px 5px 12px 0px rgba(199, 199, 199, 0.67);
+    -moz-box-shadow: 1px 5px 12px 0px rgba(199, 199, 199, 0.67);
+    box-shadow: 1px 5px 12px 0px rgba(199, 199, 199, 0.67);
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 14px;
+      color: $mainColor;
+      text-transform: uppercase;
+    }
+    .form-group {
+      width: 100%;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      label {
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: $blackColor;
+      }
+      input {
+        border: 1px solid $mainColor;
+        width: 100%;
+        padding: 6px;
+        border-radius: 2px;
+        outline: none;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        color: $blackColor;
+        transition: all 350ms ease;
+        &:focus {
+          -webkit-box-shadow: 0px 0px 2.9px 1px $mainColor;
+          -moz-box-shadow: 0px 0px 2.9px 1px $mainColor;
+          box-shadow: 0px 0px 2.9px 1px $mainColor;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 6px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: #fff;
+      font-size: 17px;
+      background-color: $mainColor;
+      cursor: pointer;
+    }
+  }
+}
