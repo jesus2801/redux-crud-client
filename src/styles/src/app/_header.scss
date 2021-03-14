@@ -25,4 +25,27 @@ nav {
       background-color: $secondColorHover;
     }
   }
+
+  @media (max-width: 840px) {
+    justify-content: center;
+    flex-direction: column;
+    .add-product {
+      margin-top: 20px;
+    }
+    h1 {
+      text-align: center;
+      a {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 490px) {
+    h1 {
+      a {
+        font-size: 1.2rem;
+      }
+    }
+  }
 }

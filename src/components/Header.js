@@ -10,7 +10,7 @@ function Header() {
         <Link to="/">CRUD - React - Redux - REST API & Axios</Link>
       </h1>
       <Link to="/products/add" className="add-product">
-        AGREGAR PRODCUTO
+        ADD PRODUCT
       </Link>
     </nav>
   );

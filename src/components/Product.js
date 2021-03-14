@@ -40,10 +40,10 @@ const Product = ({product}) => {
       <td>{name}</td>
       <td>$ {price}</td>
       <td>
-        <button className="button edit" onClick={() => redirectToEdit(product)}>
+        <button className="edit" onClick={() => redirectToEdit(product)}>
           Editar
         </button>
-        <button className="button delete" onClick={() => confirmDeleteProduct(id)}>
+        <button className="delete" onClick={() => confirmDeleteProduct(id)}>
           Eliminar
         </button>
       </td>

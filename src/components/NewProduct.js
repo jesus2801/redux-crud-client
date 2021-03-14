@@ -31,7 +31,14 @@ const NewProduct = ({history}) => {
         'Sorry, an error has occurred, please try again later',
         'error'
       );
+      return;
     }
+
+    if (name.trim() !== '') {
+      //redirect to home
+      history.push('/');
+    }
+    //eslint-disable-next-line
   }, [error, loading]);
 
   const onChange = e => {
@@ -51,16 +58,12 @@ const NewProduct = ({history}) => {
 
     //validate form
     if (helpers.isEmpty(name, price)) {
-      //mostrar alerta
-      console.log('errro');
+      Swal.fire('Error!', 'Please fill in all fields correctly', 'error');
       return;
     }
 
     //create new product
     addProduct(product);
-
-    //redirect to home
-    history.push('/');
   };
 
   return (
