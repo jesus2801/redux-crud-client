@@ -1,18 +1,18 @@
-import React, {Fragment, useEffect} from 'react';
+import React, { Fragment, useEffect } from 'react';
 import Swal from 'sweetalert2';
 
 import Product from './Product';
 import helpers from '../functions';
 
 //redux
-import {useSelector, useDispatch} from 'react-redux';
-import {getProducts} from '../actions/products.actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProducts } from '../actions/products.actions';
 
 const Products = () => {
   //state
-  const {products} = useSelector(state => state.products);
+  const { products } = useSelector(state => state.products);
 
-  const {error, loading} = useSelector(state => state.products);
+  const { error, loading } = useSelector(state => state.products);
 
   useEffect(() => {
     if (loading) {
@@ -53,7 +53,9 @@ const Products = () => {
         <tbody>
           {products.length === 0
             ? null
-            : products.map(product => <Product key={product.id} product={product} />)}
+            : products.map(product => (
+                <Product key={product.id} product={product} />
+              ))}
         </tbody>
       </table>
     </Fragment>

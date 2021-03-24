@@ -1,22 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
 //actions of redux
-import {useDispatch, useSelector} from 'react-redux';
-import {createNewProduct} from '../actions/products.actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { createNewProduct } from '../actions/products.actions';
 import helpers from '../functions';
 
-const NewProduct = ({history}) => {
+const NewProduct = ({ history }) => {
   //satete
   const [product, setProduct] = useState({
     name: '',
     price: 0,
   });
 
-  const {name, price} = product;
+  const { name, price } = product;
 
   //store state
-  const {error, loading} = useSelector(state => state.products);
+  const { error, loading } = useSelector(state => state.products);
 
   useEffect(() => {
     if (loading) {

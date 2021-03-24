@@ -1,16 +1,19 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 //redux
-import {useDispatch} from 'react-redux';
-import {deleteProduct, getProductAction} from '../actions/products.actions';
+import { useDispatch } from 'react-redux';
+import {
+  deleteProduct,
+  getProductAction,
+} from '../actions/products.actions';
 
-const Product = ({product}) => {
+const Product = ({ product }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const {name, price, id} = product;
+  const { name, price, id } = product;
 
   //confirm delete
   const confirmDeleteProduct = id => {
@@ -43,7 +46,10 @@ const Product = ({product}) => {
         <button className="edit" onClick={() => redirectToEdit(product)}>
           Editar
         </button>
-        <button className="delete" onClick={() => confirmDeleteProduct(id)}>
+        <button
+          className="delete"
+          onClick={() => confirmDeleteProduct(id)}
+        >
           Eliminar
         </button>
       </td>

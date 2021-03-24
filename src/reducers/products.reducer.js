@@ -62,7 +62,9 @@ const reducer = (state = initialState, action) => {
     case DELETED_PRODUCT_SUCCESS:
       return {
         ...state,
-        products: state.products.filter(product => product.id !== state.productDelete),
+        products: state.products.filter(
+          product => product.id !== state.productDelete
+        ),
         productDelete: null,
       };
     case GET_PRODUCT_EDIT:
@@ -75,7 +77,9 @@ const reducer = (state = initialState, action) => {
         ...state,
         productEdit: null,
         products: state.products.map(product =>
-          product.id === action.payload ? (product = action.payload) : product
+          product.id === action.payload
+            ? (product = action.payload)
+            : product
         ),
       };
     default:

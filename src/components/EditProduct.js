@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {useHistory} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
-import {editProductAction} from '../actions/products.actions';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { editProductAction } from '../actions/products.actions';
 import helpers from '../functions';
 import Swal from 'sweetalert2';
 
 function EditProduct() {
   const dispatch = useDispatch();
 
-  const {productEdit, error} = useSelector(state => state.products);
+  const { productEdit, error } = useSelector(state => state.products);
   const history = useHistory();
 
   const [product, setProduct] = useState(productEdit);
@@ -25,7 +25,7 @@ function EditProduct() {
     return null;
   }
 
-  const {name, price} = product;
+  const { name, price } = product;
 
   const onChange = e => {
     setProduct({
